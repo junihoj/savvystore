@@ -1,0 +1,10 @@
+/* line 2, sass_template/demo.scss */
+body .container-fluid {
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  background: grey; }
+  /* line 7, sass_template/demo.scss */
+  body .container-fluid p {
+    padding: 20px;
+    background: pink; }
