@@ -43,10 +43,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites', # required for django-allauth
     # external lib
     #sass
     'sass_processor',
     'compressor',
+    #allauth
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
     # myapps
     'store'
 ]
@@ -77,6 +82,13 @@ TEMPLATES = [
             ],
         },
     },
+]
+
+AUTHENTICATION_BACKENDS = [
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
 WSGI_APPLICATION = 'savvystore.wsgi.application'
@@ -166,3 +178,6 @@ COMPRESS_PRECOMPILERS = (
 # COMPRESS_OFFLINE = True
 # LIBSASS_OUTPUT_STYLE = 'compressed'
 # STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
+
+# DJANGO-ALLAUTH
+SITE_ID = 1
